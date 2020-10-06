@@ -1,10 +1,10 @@
 import psycopg2
 import sqlite3
 
-pg_dbname = "lekntffd"
-pg_user = "lekntffd"
-pg_password = "0Pl9-gGXtK_9vWJNcVySptlHXo7YNH5z"
-pg_host = "topsy.db.elephantsql.com"
+pg_dbname = "?"
+pg_user = "?"
+pg_password = "?"
+pg_host = "?"
 
 
 def connect_to_pg(pg_dbname, pg_user, pg_password, pg_host, extraction_db='rpg_db.sqlite3'):
@@ -52,6 +52,7 @@ if __name__ == "__main__":
   print(sl_curs)
   characters = execute_query(sl_curs, get_characters)
   execute_query(pg_curs, create_pg_character_table) # creating table in pg db
+  
   for character in characters:
     insert_character = """
       INSERT INTO charactercreator_character
