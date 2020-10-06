@@ -42,7 +42,7 @@ if __name__ == "__main__":
   curs = conn.cursor()
   # stretch goald - how can you make it so you don't get an error from the below function when running this file twice?
   execute_query(curs, create_table_statement) # this will give an error if we run twice, how can we fix? (try and execpt? Special SQL command?)
-  execute_query(curs, execute_query)
+  execute_query(curs, insert_statement)
   conn.commit()
-  print(execute_query(query)) # checks to make sure we have the table by printing contents
+  print(execute_query(table_check)) # checks to make sure we have the table by printing contents
                     
